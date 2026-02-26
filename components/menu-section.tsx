@@ -17,6 +17,18 @@ const signatureDishes = [
     image: "/images/dish-garden.jpg",
   },
 ]
+const specialItems = [
+  {
+    label: "Seasonal Special",
+    name: "Summer Tasting Menu",
+    price: "£145",
+  },
+  {
+    label: "Limited Edition",
+    name: "Classic Wagyu Selection",
+    price: "£85",
+  },
+]
 
 const menuCategories = [
   {
@@ -64,9 +76,8 @@ function DishCard({
   return (
     <div
       ref={ref}
-      className={`group relative overflow-hidden cursor-pointer transition-all duration-1000 ease-[cubic-bezier(0.16,1,0.3,1)] ${
-        isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-16"
-      }`}
+      className={`group relative overflow-hidden cursor-pointer transition-all duration-1000 ease-[cubic-bezier(0.16,1,0.3,1)] ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-16"
+        }`}
       style={{ transitionDelay: `${index * 200}ms` }}
     >
       <div className="aspect-[3/4] relative overflow-hidden">
@@ -100,11 +111,10 @@ export function MenuSection() {
         {/* Section label */}
         <div ref={headingRef} className="mb-14 md:mb-20">
           <span
-            className={`inline-block text-xs tracking-[0.3em] uppercase text-[#C9A84C]/60 font-sans mb-4 transition-all duration-700 ${
-              headingVisible
+            className={`inline-block text-xs tracking-[0.3em] uppercase text-[#C9A84C]/60 font-sans mb-4 transition-all duration-700 ${headingVisible
                 ? "opacity-100 translate-y-0"
                 : "opacity-0 translate-y-4"
-            }`}
+              }`}
           >
             Signature Dishes
           </span>
@@ -120,11 +130,10 @@ export function MenuSection() {
         {/* Special items */}
         <div
           ref={specialRef}
-          className={`mt-16 md:mt-24 grid md:grid-cols-2 gap-px bg-[#2A2A2A] transition-all duration-700 ${
-            specialVisible
+          className={`mt-16 md:mt-24 grid md:grid-cols-2 gap-px bg-[#2A2A2A] transition-all duration-700 ${specialVisible
               ? "opacity-100 translate-y-0"
               : "opacity-0 translate-y-8"
-          }`}
+            }`}
         >
           {specialItems.map((item, i) => (
             <div
